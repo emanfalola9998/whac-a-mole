@@ -1,0 +1,56 @@
+.squares-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "square square square" "square square square" "square square square";
+  justify-content: center;
+}
+.squares-container__square {
+  border-radius: 2px solid green;
+  width: 100px;
+  height: 100vh;
+  display: flex;
+}
+.squares-container__square:nth-child(1) {
+  border-top: none;
+  border-left: none;
+  grid-area: square1;
+}
+.squares-container__square:nth-child(2) {
+  grid-area: square2;
+  border-top: none;
+}
+.squares-container__square:nth-child(3) {
+  grid-area: square3;
+  border-top: none;
+  border-right: none;
+}
+.squares-container__square:nth-child(4) {
+  grid-area: square4;
+  border-left: none;
+}
+.squares-container__square:nth-child(5) {
+  grid-area: square5;
+}
+.squares-container__square:nth-child(6) {
+  grid-area: square6;
+  border-right: none;
+}
+.squares-container__square:nth-child(7) {
+  grid-area: square7;
+  border-bottom: none;
+  border-left: none;
+}
+.squares-container__square:nth-child(8) {
+  grid-area: square8;
+  border-bottom: none;
+}
+.squares-container__square:nth-child(9) {
+  grid-area: square9;
+  border-bottom: none;
+  border-right: none;
+}
+
+* {
+  margin: 0px;
+}/*# sourceMappingURL=style.css.map */
