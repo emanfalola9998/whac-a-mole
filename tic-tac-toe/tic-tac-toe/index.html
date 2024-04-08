@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,18 +7,21 @@
     <title>Vite + TS</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-    <div class="squares-container">
-      <div class="squares-container__square">square</div>
-      <div class="squares-container__square">square</div>
-      <div class="squares-container__square">square</div>
-      <div class="squares-container__square">square</div>
-      <div class="squares-container__square">square</div>
-      <div class="squares-container__square">square</div>
-      <div class="squares-container__square">square</div>
-      <div class="squares-container__square">square</div>
-      <div class="squares-container__square">square</div>
+    <div class="board" id="board">
+      <div class="board__cell" data-cell></div>
+      <div class="board__cell" data-cell></div>
+      <div class="board__cell" data-cell></div>
+      <div class="board__cell" data-cell></div>
+      <div class="board__cell" data-cell></div>
+      <div class="board__cell" data-cell></div>
+      <div class="board__cell" data-cell></div>
+      <div class="board__cell" data-cell></div>
+      <div class="board__cell" data-cell></div>
     </div>
+    <div class="winning-message" id="winningMessage">
+      <div id="winningMessageText"></div>
+      <button id="restartButton">Restart</button>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
