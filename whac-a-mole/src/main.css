@@ -9,4 +9,7 @@
   height: 200px;
   width: 200px;
   border: solid black 1px;
+}
+.board .mole {
+  background-color: blue;
 }/*# sourceMappingURL=main.css.map */
