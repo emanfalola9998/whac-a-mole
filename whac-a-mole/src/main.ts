@@ -4,6 +4,8 @@ const cells = document.querySelectorAll(".board__cell") as NodeListOf<HTMLElemen
 const mole = document.querySelector(".mole") as HTMLElement | null;
 const timeRemaining = document.querySelector(".time-remaining") as HTMLElement;
 const score = document.querySelector(".score-runner") as HTMLElement;
+const startGameButton = document.querySelector(".start-game") as HTMLButton;
+
 
 if (!cells || !timeRemaining || !score) {
     throw new Error("Required elements not found.");
@@ -21,10 +23,19 @@ const randomCell = () => {
   randomPosition.classList.add("mole");
 }
 
-randomCell();
+
+
+const randomMoleMovement = () => {
+  let timer = 0;
+  timer = setInterval(randomCell, 1000)
+}
+
+
 
 
 cells.forEach((cell) => {
   cell.addEventListener("click", () => {
   });
 });
+
+startGameButton.addEventListener("click", randomMoleMovement)
