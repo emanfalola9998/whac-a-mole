@@ -1,0 +1,12 @@
+.board {
+  width: 606px;
+  height: 606px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.board__cell {
+  height: 200px;
+  width: 200px;
+  border: solid black 1px;
+}/*# sourceMappingURL=main.css.map */
