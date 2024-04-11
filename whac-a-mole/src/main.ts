@@ -19,13 +19,20 @@ let countdownTimer:  number| null = null;
 let timeLeft: number = parseInt(timeRemaining.innerText, 10); 
 let moleMovementTimer: number | null = null;
 
-const randomCell = (reset?: number) => {
+const randomCell = () => {
+  const screenWidth = window.innerWidth;
+  console.log('Screen width:', screenWidth);
+
+  const hiddenMobileArray: string[] = [];
     cells.forEach((cell) => {
         cell.classList.remove("mole");
+        if(cell.classList.contains("hidden-mobile") && screenWidth < 768)
+          hiddenMobileArray.push("a")
     });
-
-
-    let randomIndex: number = Math.floor(Math.random() * cells.length);
+    console.log("hiddenMobileArray:", hiddenMobileArray);
+    
+    
+    let randomIndex: number = Math.floor(Math.random() * (cells.length-hiddenMobileArray.length))
     let randomPosition: HTMLElement = cells[randomIndex];
     randomPosition.classList.add("mole");
 
@@ -33,8 +40,8 @@ const randomCell = (reset?: number) => {
 }
 
 
-
-cells.forEach(cell => {
+const prerequisites = () => {
+  cells.forEach(cell => {
     cell.addEventListener('mousedown', () => {
         if (cell.id === correctCell) {
           result++;
@@ -44,10 +51,15 @@ cells.forEach(cell => {
     });
 });
 
+  cells.forEach((cell) => {
+    cell.addEventListener("click", () => {
+    });
+  });
+}
+
 
 
 const randomMoleMovement = (inputDifficulty: HTMLInputElement) => {
-  // let moleMovementTimer = 0;
   if (moleMovementTimer) clearInterval(moleMovementTimer)
   if(inputDifficulty.value == ""){
     inputDifficulty.value = "1000" 
@@ -76,10 +88,7 @@ const startCountdown = () => {
 }
 
 
-cells.forEach((cell) => {
-  cell.addEventListener("click", () => {
-  });
-});
+
 
 const resetGame = () => {
   result = 0;
@@ -102,18 +111,12 @@ const resetGame = () => {
 
 
 startGameButton.addEventListener("click", () => {
+  prerequisites()
   randomCell();
   startCountdown();
   randomMoleMovement(inputDifficulty);
-  console.log("Game started"); // Debugging output
-  console.log("countdownTimer:", countdownTimer);
-  console.log("timeLeft:", timeLeft);
-  console.log("moleMovementTimer:", moleMovementTimer);
-  
 });
 
 resetButton.addEventListener("click", () => {
     resetGame(); 
-    console.log("Reset button clicked"); // Debugging output
-
 });

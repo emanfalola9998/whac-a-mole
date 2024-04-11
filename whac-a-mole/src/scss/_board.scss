@@ -1,25 +1,45 @@
+.board-container{
+    display:flex;
+    justify-content: center;
+}
+
 .board{
-    width: 606px;
-    height: 606px;
+    width: 404px;
+    height: 404px;
     display:grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,1fr);
-    // place-items: center;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
 
     &__cell{
         height:200px;
         width:200px;
         border: solid black 1px;
     }
+}
 
-    .mole {
-        background-color: blue;
-        background-image: url('../../public/images/mole.jpg');
-        width: 100%;
-        height:auto;
+.mole {
+    background-image: url('../../public/images/mole.jpg');
+    width: 100%;
+    height:auto;
+}
+
+[id='5'], [id='6'], [id='7'], [id='8'], [id='9'] {
+    display: none;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .board{
+        width:606px;
+        height:606px;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(3,1fr);
 
     }
-
+    [id='5'], [id='6'], [id='7'], [id='8'], [id='9'] {
+        display: block;
+    }
 }
 
 
