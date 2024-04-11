@@ -14,7 +14,7 @@
 .board .mole {
   background-color: blue;
   background-image: url("../../public/images/mole.jpg");
-  width: 200px;
+  width: 100%;
   height: auto;
 }
 
