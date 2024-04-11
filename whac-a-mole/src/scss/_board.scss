@@ -4,6 +4,7 @@
     display:grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(3,1fr);
+    // place-items: center;
 
     &__cell{
         height:200px;
@@ -14,10 +15,11 @@
     .mole {
         background-color: blue;
         background-image: url('../../public/images/mole.jpg');
-        width: 200px;
+        width: 100%;
         height:auto;
+
     }
-    
+
 }
 
 
