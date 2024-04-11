@@ -1,3 +1,20 @@
 @use "./scss/board";
+@use "./scss/typography";
 
 
+*{
+    background-color: aqua;
+    cursor: url('../public/images/hammer.jpg'), auto;
+}
+
+.title{
+    text-align: center;
+    text-decoration: underline;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    background-color: orange;
+    width:100%;
+}   
+
+.hammer-cursor {
+    cursor: url('path/to/hammer-cursor.png'), auto;
+  }

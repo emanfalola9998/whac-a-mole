@@ -8,6 +8,7 @@
   </head>
   <body>
     <div id="app"></div>
+    <h1 class="title">Whac-A-Mole</h1>
 
     <h1>Score:</h1>
     <h1 class="score-runner">0</h1>
@@ -15,14 +16,15 @@
     <h1>Time Left:</h1>
     <h1 class="time-remaining">60</h1>
 
-    <label>Set your difficulty</label>
+    <label>Set your difficulty (the speed at which the mole moves to the next square in seconds)</label>
     <input class="input-difficulty" name=""/>
+    <br/>
 
-    <label>Set Timer</label>
+    <label>Set Timer (How long you will have in the game)</label>
     <input class="timer" name=""/>
 
-    <div class="board">
-      <div class="board__cell" id="1"></div>
+    <div class="board hammer-cursor">
+      <div class="board__cell hammer-cursor" id="1"></div>
       <div class="board__cell" id="2"></div>
       <div class="board__cell" id="3"></div>
       <div class="board__cell" id="4"></div>

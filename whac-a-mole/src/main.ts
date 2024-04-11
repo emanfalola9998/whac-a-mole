@@ -29,6 +29,8 @@ const randomCell = () => {
     correctCell = randomPosition.id;
 }
 
+
+
 cells.forEach(cell => {
     cell.addEventListener('mousedown', () => {
         if (cell.id === correctCell) {
