@@ -114,7 +114,6 @@ const mediumDifficulty = (scored: number, setTimer: HTMLInputElement) => {
     inputDifficulty.value = "250"; 
     moleMovementTimer = setInterval(randomCell, parseInt(inputDifficulty.value));
     console.log("medium level");
- 
     scoreGlobal = parseInt(score.innerText);
     resetGame();
   }
