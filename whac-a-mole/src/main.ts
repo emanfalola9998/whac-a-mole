@@ -70,7 +70,7 @@ const randomMoleMovement = (inputDifficulty: HTMLInputElement) => {
   moleMovementTimer = setInterval(randomCell, parseInt(inputDifficulty.value))
 }
 
-const startCountdown = () => {
+const startCountdown = (setTimer: HTMLInputElement) => {
   if (countdownTimer) clearInterval(countdownTimer);
   if(setTimer.value == ""){
     setTimer.value = "70"
@@ -98,23 +98,28 @@ const startCountdown = () => {
 }
 
 
-const mediumDifficulty = (scored: number) => {
+const mediumDifficulty = (scored: number, setTimer: HTMLInputElement) => {
   console.log("mediumDifficulty");
-  const threshold = 2
+  const threshold = 2;
   if (scored > threshold){
     heading.classList.remove("medium-difficulty-hidden");
-    body.classList.add("medium")
+    body.classList.add("medium");
     cells.forEach(cell => {
-      cell.classList.add("medium")
-    })
-    if (moleMovementTimer) clearInterval(moleMovementTimer)
+      cell.classList.add("medium");
+    });
+
+    setTimer.value = "10";
+    startCountdown(setTimer);
+    if (moleMovementTimer) clearInterval(moleMovementTimer);
     inputDifficulty.value = "250"; 
-    moleMovementTimer = setInterval(randomCell, parseInt(inputDifficulty.value))
+    moleMovementTimer = setInterval(randomCell, parseInt(inputDifficulty.value));
     console.log("medium level");
+ 
     scoreGlobal = parseInt(score.innerText);
-    resetGame()
+    resetGame();
   }
 }
+
 
 
 
@@ -141,7 +146,7 @@ console.log("tracking score:", scoreGlobal)
 startGameButton.addEventListener("click", () => {
   prerequisites()
   randomCell();
-  startCountdown();
+  startCountdown(setTimer);
   randomMoleMovement(inputDifficulty);
 });
 
@@ -152,7 +157,7 @@ resetButton.addEventListener("click", () => {
 });
 
 nextLevelButton.addEventListener("click", () => {
-  mediumDifficulty(scoreGlobal);
+  mediumDifficulty(scoreGlobal, setTimer);
 });
 
 
