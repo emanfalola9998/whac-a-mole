@@ -7,11 +7,14 @@ const startGameButton = document.querySelector(".start-game") as HTMLButtonEleme
 const inputDifficulty = document.querySelector(".input-difficulty") as HTMLInputElement;
 const setTimer = document.querySelector(".timer") as HTMLInputElement;
 const resetButton = document.querySelector(".reset-game") as HTMLButtonElement;
+const body = document.querySelector("body");
+const nextLevelButton = document.querySelector(".next-level") as HTMLButtonElement;
+const heading = document.querySelector(".medium-difficulty-hidden");
 
-if (!cells || !timeRemaining || !score || !inputDifficulty || !setTimer || !resetButton) {
+if (!cells || !timeRemaining || !score || !inputDifficulty || !setTimer || !resetButton || !body || !nextLevelButton || !heading) {
     throw new Error("Required elements not found.");
 }
-
+let scoreGlobal = 0;
 let result: number = 0;
 let correctCell: string|null;
 
@@ -21,7 +24,7 @@ let moleMovementTimer: number | null = null;
 
 const randomCell = () => {
   const screenWidth = window.innerWidth;
-  console.log('Screen width:', screenWidth);
+  // console.log('Screen width:', screenWidth);
 
   const hiddenMobileArray: string[] = [];
     cells.forEach((cell) => {
@@ -29,7 +32,7 @@ const randomCell = () => {
         if(cell.classList.contains("hidden-mobile") && screenWidth < 768)
           hiddenMobileArray.push("a")
     });
-    console.log("hiddenMobileArray:", hiddenMobileArray);
+    // console.log("hiddenMobileArray:", hiddenMobileArray);
     
     
     let randomIndex: number = Math.floor(Math.random() * (cells.length-hiddenMobileArray.length))
@@ -82,11 +85,36 @@ const startCountdown = () => {
       if (timeLeft <= 0 && countdownTimer !== null) {
           clearInterval(countdownTimer);
           alert(`Time's up! Your Final Score is ${score.innerText}`);
+          if (parseInt(score.innerText)  && parseInt(score.innerText) > 2){
+            console.log("next level time");
+            
+            scoreGlobal = parseInt(score.innerText)
+            console.log("scoreGlobal:", scoreGlobal );
+            
+          }
           resetGame();
       }
   }, 1000);
 }
 
+
+const mediumDifficulty = (scored: number) => {
+  console.log("mediumDifficulty");
+  const threshold = 2
+  if (scored > threshold){
+    heading.classList.remove("medium-difficulty-hidden");
+    body.classList.add("medium")
+    cells.forEach(cell => {
+      cell.classList.add("medium")
+    })
+    if (moleMovementTimer) clearInterval(moleMovementTimer)
+    inputDifficulty.value = "250"; 
+    moleMovementTimer = setInterval(randomCell, parseInt(inputDifficulty.value))
+    console.log("medium level");
+    scoreGlobal = parseInt(score.innerText);
+    resetGame()
+  }
+}
 
 
 
@@ -108,7 +136,7 @@ const resetGame = () => {
   console.log("Game reset successfully");
 };
 
-
+console.log("tracking score:", scoreGlobal)
 
 startGameButton.addEventListener("click", () => {
   prerequisites()
@@ -117,6 +145,14 @@ startGameButton.addEventListener("click", () => {
   randomMoleMovement(inputDifficulty);
 });
 
+
+
 resetButton.addEventListener("click", () => {
     resetGame(); 
 });
+
+nextLevelButton.addEventListener("click", () => {
+  mediumDifficulty(scoreGlobal);
+});
+
+

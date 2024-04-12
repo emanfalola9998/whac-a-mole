@@ -19,8 +19,8 @@
 
 .mole {
   background-image: url("../../public/images/mole.jpg");
-  width: 100%;
-  height: auto;
+  width: 200px;
+  height: 200px;
 }
 
 [id="5"], [id="6"], [id="7"], [id="8"], [id="9"] {
@@ -44,10 +44,29 @@ body {
   font-style: normal;
 }
 
-* {
+body {
   background-color: aqua;
   cursor: url("../public/images/hammer.jpg"), auto;
   text-align: center;
+}
+
+.medium {
+  background-color: red;
+  color: green;
+}
+
+.medium-difficulty-hidden {
+  display: none;
+}
+
+.medium-difficulty {
+  font-size: 32px;
+  color: black;
+}
+
+.impossible {
+  background-color: black;
+  color: white;
 }
 
 .title {
