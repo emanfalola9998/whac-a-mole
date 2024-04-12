@@ -70,6 +70,15 @@ body {
   color: black;
 }
 
+button {
+  padding: 20px;
+  border-radius: 3px;
+  border: 1px solid grey;
+  background-color: orange;
+  border-radius: 10%;
+  font-style: inherit;
+}
+
 .title {
   text-align: center;
   text-decoration: underline;

@@ -29,6 +29,17 @@ body{
     color:black
 }
 
+button{
+    // opacity: transparent;
+    padding: 20px;
+    // border: 1px solid black;
+    // background-color: transparent;
+    border-radius: 3px;
+    border:1px solid grey;
+    background-color: orange;
+    border-radius: 10%;
+    font-style: inherit;
+}
 
 .title{
     text-align: center;
