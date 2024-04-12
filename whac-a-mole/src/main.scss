@@ -2,9 +2,29 @@
 @use "./scss/typography";
 
 
-*{
+body{
     background-color: aqua;
     cursor: url('../public/images/hammer.jpg'), auto;
+    text-align:center;
+}
+
+.medium{
+    background-color:red;
+    color:green;
+}
+
+.medium-difficulty-hidden{
+    display:none;
+}
+
+.medium-difficulty{
+    font-size: 32px;
+    color:black
+}
+
+.impossible{
+    background-color: black;
+    color:white;
 }
 
 .title{

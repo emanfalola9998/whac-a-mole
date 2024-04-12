@@ -1,32 +1,72 @@
 @import url("https://fonts.googleapis.com/css2?family=Bangers&family=Madimi+One&display=swap");
+.board-container {
+  display: flex;
+  justify-content: center;
+}
+
 .board {
-  width: 606px;
-  height: 606px;
+  width: 404px;
+  height: 404px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 .board__cell {
   height: 200px;
   width: 200px;
   border: solid black 1px;
 }
-.board .mole {
-  background-color: blue;
+
+.mole {
   background-image: url("../../public/images/mole.jpg");
-  width: 100%;
-  height: auto;
+  width: 200px;
+  height: 200px;
 }
 
+[id="5"], [id="6"], [id="7"], [id="8"], [id="9"] {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .board {
+    width: 606px;
+    height: 606px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  [id="5"], [id="6"], [id="7"], [id="8"], [id="9"] {
+    display: block;
+  }
+}
 body {
   font-family: "Bangers", system-ui;
   font-weight: 400;
   font-style: normal;
 }
 
-* {
+body {
   background-color: aqua;
   cursor: url("../public/images/hammer.jpg"), auto;
+  text-align: center;
+}
+
+.medium {
+  background-color: red;
+  color: green;
+}
+
+.medium-difficulty-hidden {
+  display: none;
+}
+
+.medium-difficulty {
+  font-size: 32px;
+  color: black;
+}
+
+.impossible {
+  background-color: black;
+  color: white;
 }
 
 .title {
