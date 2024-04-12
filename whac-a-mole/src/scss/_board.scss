@@ -20,8 +20,8 @@
 .mole {
     background-image: url('../../public/images/mole.jpg');
     width: 200px;
-    height:200px;
-    
+    height:auto;
+    background-size: cover;
 }
 
 [id='5'], [id='6'], [id='7'], [id='8'], [id='9'] {

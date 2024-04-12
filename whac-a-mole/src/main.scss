@@ -3,10 +3,16 @@
 
 
 body{
-    background-color: aqua;
+    color:orange;;
     cursor: url('../public/images/hammer.jpg'), auto;
     text-align:center;
+    background-image: url('../../public/images/mole-background.jpg');
+    background-size: cover;
+    text-shadow: black 0px 0px 10px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
+
+
 
 .medium{
     background-color:red;
@@ -15,6 +21,7 @@ body{
 
 .medium-difficulty-hidden{
     display:none;
+    text-shadow: black 0px 0px 10px;
 }
 
 .medium-difficulty{
@@ -22,17 +29,11 @@ body{
     color:black
 }
 
-.impossible{
-    background-color: black;
-    color:white;
-}
 
 .title{
     text-align: center;
     text-decoration: underline;
-    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-    background-color: orange;
-    width:100%;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }   
 
 .hammer-cursor {
