@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+    <script type="module" crossorigin src="/assets/index-DbR69Qq8.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Bp1zfCDf.css">
+  </head>
+  <body class="body">
+    <div id="app"></div>
+    <h1 class="title">Whac-A-Mole</h1>
+
+    <h1>Score: <span class="score-runner">0</span></h1>
+
+
+    <h1>Time Left: <span class="time-remaining">60</span></h1>    
+
+
+    <label>Set your difficulty (the speed at which the mole moves to the next square in milliseconds)</label>
+    <input class="input-difficulty" name=""/>
+    <br/>
+
+    <h1 class="medium-difficulty-hidden medium-difficulty"> Okay you wanna play....</h1>
+
+    <label>Set Timer (How long you will have in the game)</label>
+    <input class="timer" name=""/>
+    <div class="board-container">
+      <div class="board hammer-cursor">
+        <div class="board__cell" id="1"></div>
+        <div class="board__cell" id="2"></div>
+        <div class="board__cell" id="3"></div>
+        <div class="board__cell" id="4"></div>
+        <div class="board__cell hidden-mobile" id="5"></div>
+        <div class="board__cell hidden-mobile" id="6"></div>
+        <div class="board__cell hidden-mobile" id="7"></div>
+        <div class="board__cell hidden-mobile" id="8"></div>
+        <div class="board__cell hidden-mobile" id="9"></div>
+      </div>
+    </div>
+    <div class="board-content">
+      <h3>level 1: Reach score threshold of 2</h3>
+      <h3>level 2: Reach score threshold of 5</h3>
+    </div>
+    <button class="start-game">Start</button>
+    <button class="reset-game">Reset</button>
+    <button class="next-level">Next Level</button>
+  </body>
+</html>
