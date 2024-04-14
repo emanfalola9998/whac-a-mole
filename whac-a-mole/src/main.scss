@@ -1,12 +1,11 @@
 @use "./scss/board";
 @use "./scss/typography";
 
-
 body{
     color:orange;;
-    cursor: url('../public/images/hammer.jpg'), auto;
+    // cursor: url('../public/images/hammer.jpg'), auto;
     text-align:center;
-    background-image: url('../../public/images/mole-background.jpg');
+    background-image: url('../src/images/mole-background.jpg');
     background-size: cover;
     text-shadow: black 0px 0px 10px;
     box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
@@ -16,7 +15,6 @@ body{
 
 .medium{
     background-color:red;
-    color:green;
 }
 
 .medium-difficulty-hidden{
@@ -26,7 +24,14 @@ body{
 
 .medium-difficulty{
     font-size: 32px;
-    color:black
+    color:red
+}
+
+.mole {
+    background-image: url('./images/mole.jpg');
+    width: 200px;
+    height:auto;
+    background-size: cover;
 }
 
 button{
@@ -47,6 +52,9 @@ button{
     box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }   
 
-.hammer-cursor {
-    cursor: url('path/to/hammer-cursor.png'), auto;
-  }
+// .hammer-cursor {
+//     cursor: url('path/to/hammer-cursor.png'), auto;
+//   }
+
+
+// '../../src/images/mole.jpg'

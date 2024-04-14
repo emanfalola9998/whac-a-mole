@@ -72,6 +72,7 @@ const randomMoleMovement = (inputDifficulty: HTMLInputElement) => {
 
 const startCountdown = (setTimer: HTMLInputElement) => {
   if (countdownTimer) clearInterval(countdownTimer);
+  console.log("setTimer.value:" , setTimer);
   if(setTimer.value == ""){
     setTimer.value = "70"
   }
