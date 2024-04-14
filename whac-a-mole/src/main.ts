@@ -155,7 +155,6 @@ const resetGame = () => {
       // console.log("mole class removed")
   });
   // console.log("Game reset successfully");
-  let scored = scoreGlobal; 
   if (nextLevelReset) {
     heading.classList.add("medium-difficulty-hidden");
     body.classList.remove("medium");
