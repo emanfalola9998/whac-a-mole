@@ -108,15 +108,15 @@ const startCountdown = (setTimerValue: string) => {
 }
 
 
-const mediumDifficulty = (scored: number, setTimer: HTMLInputElement) => {
+const mediumDifficulty = (scored: number,) => {
   console.log("mediumDifficulty");
   const threshold = 2;
   if (scored > threshold){
-    heading.classList.remove("medium-difficulty-hidden");
-    body.classList.add("medium");
-    cells.forEach(cell => {
-      cell.classList.add("medium");
-    });
+    // heading.classList.remove("medium-difficulty-hidden");
+    // body.classList.add("medium");
+    // cells.forEach(cell => {
+    //   cell.classList.add("medium");
+    // });
     setTimerValue = "10";
     startCountdown(setTimerValue);
     if (moleMovementTimer) clearInterval(moleMovementTimer);
@@ -147,6 +147,13 @@ const resetGame = () => {
       console.log("mole class removed")
   });
   console.log("Game reset successfully");
+  // if (scored > 2) {
+  //   heading.classList.add("medium-difficulty-hidden");
+  //   body.classList.remove("medium");
+  //   cells.forEach(cell => {
+  //     cell.classList.remove("medium");
+  //   });
+  // }
 };
 
 console.log("tracking score:", scoreGlobal)
@@ -165,7 +172,7 @@ resetButton.addEventListener("click", () => {
 });
 
 nextLevelButton.addEventListener("click", () => {
-  mediumDifficulty(scoreGlobal, setTimer);
+  mediumDifficulty(scoreGlobal);
 });
 
 
