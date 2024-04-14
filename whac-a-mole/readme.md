@@ -16,9 +16,9 @@ Score: Your score will be displayed on the screen. Try to beat your high score w
 Game Over: The game ends when the time runs out. Your final score will be displayed, and you'll have the option to play again.
 
 Technologies Used
-TypeScript: The game logic and functionality are implemented using TypeScript, a statically typed superset of JavaScript that compiles to plain JavaScript.
+TypeScript: The game logic and functionality are implemented using TypeScript
 
 HTML: The structure and layout of the game interface are created using HTML (Hypertext Markup Language).
 
-CSS: The visual styling and presentation of the game are defined using CSS (Cascading Style Sheets).
+CSS: The visual styling and presentation of the game are defined using CSS (Cascading Style Sheets), with SCSS applied and with BEM principles.
 
