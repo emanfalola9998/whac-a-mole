@@ -14,6 +14,10 @@ const heading = document.querySelector(".medium-difficulty-hidden");
 if (!cells || !timeRemaining || !score || !inputDifficulty || !setTimer || !resetButton || !body || !nextLevelButton || !heading) {
     throw new Error("Required elements not found.");
 }
+
+let setTimerValue = "0";
+
+
 let scoreGlobal = 0;
 let result: number = 0;
 let correctCell: string|null;
@@ -29,7 +33,7 @@ const randomCell = () => {
   const hiddenMobileArray: string[] = [];
     cells.forEach((cell) => {
         cell.classList.remove("mole");
-        if(cell.classList.contains("hidden-mobile") && screenWidth < 768)
+        if(cell.classList.contains("board__cell--hidden-mobile") && screenWidth < 768)
           hiddenMobileArray.push("a")
     });
     // console.log("hiddenMobileArray:", hiddenMobileArray);
@@ -70,11 +74,16 @@ const randomMoleMovement = (inputDifficulty: HTMLInputElement) => {
   moleMovementTimer = setInterval(randomCell, parseInt(inputDifficulty.value))
 }
 
-const startCountdown = (setTimer: HTMLInputElement) => {
+const startCountdown = (setTimerValue: string) => {
   if (countdownTimer) clearInterval(countdownTimer);
-  console.log("setTimer.value:" , setTimer);
-  if(setTimer.value == ""){
+  console.log("setTimer.value:" , setTimer.value);
+  console.log("setTimerValue:", setTimerValue);
+  
+  if(setTimer.value == "" && setTimerValue == "0"){
     setTimer.value = "70"
+  }
+  else if (setTimerValue != "0"){
+    setTimer.value = setTimerValue;
   }
   timeLeft = parseInt(setTimer.value); 
   timeRemaining.innerText = timeLeft.toString(); 
@@ -108,9 +117,8 @@ const mediumDifficulty = (scored: number, setTimer: HTMLInputElement) => {
     cells.forEach(cell => {
       cell.classList.add("medium");
     });
-
-    setTimer.value = "10";
-    startCountdown(setTimer);
+    setTimerValue = "10";
+    startCountdown(setTimerValue);
     if (moleMovementTimer) clearInterval(moleMovementTimer);
     inputDifficulty.value = "250"; 
     moleMovementTimer = setInterval(randomCell, parseInt(inputDifficulty.value));
@@ -146,7 +154,7 @@ console.log("tracking score:", scoreGlobal)
 startGameButton.addEventListener("click", () => {
   prerequisites()
   randomCell();
-  startCountdown(setTimer);
+  startCountdown(setTimerValue);
   randomMoleMovement(inputDifficulty);
 });
 
