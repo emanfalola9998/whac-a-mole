@@ -162,7 +162,6 @@ const resetGame = () => {
       cell.classList.remove("medium");
     });
     setTimerValue = "0";
-    scored = 0;
     inputDifficulty.value = "1000"
     nextLevelReset = false;
   }
