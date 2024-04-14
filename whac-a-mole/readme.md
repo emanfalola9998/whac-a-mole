@@ -1,6 +1,3 @@
-
-Sure! Here's a template for a README.md file describing your TypeScript Whac-A-Mole game:
-
 TypeScript Whac-A-Mole Game
 This is a simple Whac-A-Mole game implemented using TypeScript, HTML, and CSS. The game challenges players to quickly click on randomly appearing moles to earn points. It's a fun and addictive game that tests your reaction time!
 
